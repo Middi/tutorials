@@ -1,0 +1,70 @@
+* {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    color: $link;
+    font-size: 16px;
+}
+
+a:hover {
+    color: $brand;
+    text-decoration: none;
+}
+
+.active {
+    color: $brand;
+}
+
+h1 {
+    font-size: 3.3em;
+    margin-bottom: 42px;
+}
+
+h2 {
+    padding-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.3em;
+    color: white;
+    font-weight: 200;
+}
+
+h4 {
+
+  line-height: 3.5rem;
+      font-size: 3rem;
+  padding: 5px 18px 5px 8px;
+    span {
+        color: white;
+        background-color: $brand;
+        font-weight: 600;
+    }
+}
+
+
+h4 {
+    a:hover {
+        color: $brand;
+        text-decoration: none;
+    }
+}
+
+p {
+    color: white;
+    font-weight: 400;
+    line-height: 1.3em;
+    font-size: 18px;
+    padding-bottom: 20px;
+}
+
+.black {
+    color: #222;
+}

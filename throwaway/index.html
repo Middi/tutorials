@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Book Counter</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<script>
+    
+    function Mammal(name) {
+        this.name = name;
+        this.getInfo = function() {
+            return "the mammals name is " + this.name;
+        }
+    }
+
+    Mammal.prototype.sound = "grrr";
+
+
+    Mammal.prototype.makeSound = function() {
+        return this.name + " says " + this.sound;
+    }
+
+    var grover = new Mammal("grover");
+
+    document.write(grover.makeSound() +  "<br />");
+
+    for (var prop in grover) {
+        document.write(prop + " : " + grover[prop]  + "<br />");
+    }
+
+document.write(grover.hasOwnProperty("name") + "<br />");
+
+
+document.write(grover.hasOwnProperty("sound") + "<br />");
+
+</script>
+
+</body>
+
+</html>
