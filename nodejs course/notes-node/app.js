@@ -18,7 +18,15 @@ console.log('Yargs', argv)
 
 
 if (command === 'add') {
-    notes.addNote(argv.title, argv.body);
+    var note = notes.addNote(argv.title, argv.body);
+    if(note !== null && typeof note === 'object') {
+        console.log('---------')
+        console.log('Added Succesfully:', note.title);
+        console.log('---------')
+    }
+    else {
+        console.log('Duplicate found');
+    }
 }
 
 else if (command === 'list') {
