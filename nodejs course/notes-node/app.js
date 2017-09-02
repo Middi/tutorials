@@ -34,11 +34,26 @@ else if (command === 'list') {
 }
 
 else if (command === 'read') {
+    var note = notes.getNote(argv.title);
+    
+    if(note !== null && typeof note === 'object') {
+        console.log('---------');
+        console.log('Title:', note.title);
+        console.log('Body:', note.body);
+        console.log('---------');
+    }
+    else {
+        console.log('Note not found');
+    }
     notes.getNote(argv.title);
 }
 
 else if (command === 'remove') {
-    notes.removeNote(argv.title);
+    var noteRemoved = notes.removeNote(argv.title);
+    var message = noteRemoved ? 'Note was removed' : 'Note does not exist';
+    console.log('---------')
+    console.log(message);
+    console.log('---------')
 }
 
 else { 
