@@ -1,0 +1,69 @@
+@import "normalise";
+
+h4 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+table {
+    width: 400px;
+    margin: 100px auto;
+    font-family: helvetica;
+}
+
+thead {
+    background-color: #eeeeee;
+    line-height: 2rem;
+}
+
+td {
+    padding: 6px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+
+.world-cup a {
+    display: inline-block;
+    position: relative;
+    &:hover .player-card {
+        display: block;
+    }
+}
+
+.goals {
+    text-align: center;
+}
+
+.player-card {
+    img {
+        width: 140px;
+        height: auto;
+        float: left;
+        margin-right: 20px;
+    }
+    h4 {
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    top: 10px;
+    left: 10px;
+    color: #444;
+    display: block;
+    position: absolute;
+    background: white;
+    padding: 14px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    width: 400px;
+    font-size: 14px;
+    display: none;
+    z-index: 1;
+}
+
+.animated {
+    animation-duration: .5s;
+  }
