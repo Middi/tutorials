@@ -1,0 +1,1 @@
+$(function(){$(".awesome-form .input-group input").focusout(function(){""===$(this).val()?$(this).removeClass("has-value"):$(this).addClass("has-value")})});
