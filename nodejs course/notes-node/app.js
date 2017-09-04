@@ -20,9 +20,7 @@ console.log('Yargs', argv)
 if (command === 'add') {
     var note = notes.addNote(argv.title, argv.body);
     if(note !== null && typeof note === 'object') {
-        console.log('---------')
-        console.log('Added Succesfully:', note.title);
-        console.log('---------')
+        notes.logNote(note);
     }
     else {
         console.log('Duplicate found');
@@ -37,10 +35,7 @@ else if (command === 'read') {
     var note = notes.getNote(argv.title);
     
     if(note !== null && typeof note === 'object') {
-        console.log('---------');
-        console.log('Title:', note.title);
-        console.log('Body:', note.body);
-        console.log('---------');
+        notes.logNote(note);
     }
     else {
         console.log('Note not found');
