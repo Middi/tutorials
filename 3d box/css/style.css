@@ -7,6 +7,7 @@ h1, h2 {
 
 h2 {
     font-size: 1rem;
+    padding: 14px 0;
 }
 
 body {
@@ -62,13 +63,13 @@ body {
 }
 
 .top {
-    transform: rotateX(-90deg) translateY(-100px);
+    transform: rotateX(90deg) translateY(-100px);
     transform-origin: top;
     background: #243259;
 }
 
 .bottom {
-    transform: rotateX(90deg) translateY(100px);
+    transform: rotateX(-90deg) translateY(100px);
     transform-origin: bottom;
     background: #F2AF70;
 }
