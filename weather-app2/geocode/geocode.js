@@ -1,10 +1,8 @@
 const request = require('request');
 
-geocodeAddress = (address) => {
+geocodeAddress = (address, callback) => {
 
     var address = encodeURIComponent(address);
-
-    const spacer = '===========================';
 
     request({
         url: `http://maps.googleapis.com/maps/api/geocode/json?address=${address}`,
@@ -12,18 +10,17 @@ geocodeAddress = (address) => {
     }, (error, response, body) => {
 
         if(error) {
-            console.log('unable to connect to Google servers');
+            callback('unable to connect to Google servers');
         }
         else if (body.status === 'ZERO_RESULTS') {
-            console.log('unable to find that address');
+            callback('unable to find that address');
         }
         else if(body.status === 'OK') {
-            console.log(spacer);
-            console.log(`Address: ${body.results[0].formatted_address}`);
-            console.log(spacer);
-            console.log(`Lat: ${body.results[0].geometry.location.lat}`);
-            console.log(`Lat: ${body.results[0].geometry.location.lng}`);
-            console.log(spacer);
+            callback(undefined, {
+                address: body.results[0].formatted_address,
+                lat: body.results[0].geometry.location.lat,
+                lng: body.results[0].geometry.location.lng
+            });
         }
     });
 }
