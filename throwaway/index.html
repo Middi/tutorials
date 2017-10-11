@@ -21,6 +21,7 @@
         ctx.lineJoin = 'round';
         ctx.lineCap = 'round';
         ctx.lineWidth = 1;
+        ctx.globalAlpha = 0.01;
         
         let isDrawing = false;
         let lastX = 0;
@@ -39,6 +40,8 @@
             lastX = e.offsetX;
             lastY = e.offsetY;
             hue++;
+            ctx.globalAlpha += 0.008;
+
 
             if(hue >= 360) {
                 hue = 0;
@@ -56,6 +59,7 @@
             lastX = e.offsetX;
             lastY = e.offsetY;
             ctx.lineWidth = 1;
+            ctx.globalAlpha = 0.01;
         });
 
         canvas.addEventListener('mousemove', draw);
